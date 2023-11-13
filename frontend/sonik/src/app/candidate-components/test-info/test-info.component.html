@@ -1,0 +1,20 @@
+<mat-dialog-content class="mat-typography">
+    <mat-toolbar style="background-color: #17569b;">
+        <mat-toolbar-row fxLayout="row">
+            <span>{{name}}</span>
+            <span class="spacer"></span>
+            <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-list role="list">
+        <mat-list-item role="listitem"><b>Test Name: </b>{{name}}</mat-list-item>
+        <mat-list-item role="listitem"><b>Duration: </b>{{duration}} Min.</mat-list-item>
+        <mat-list-item role="listitem"><b>Start Date: </b>{{startDate}}</mat-list-item>
+        <mat-list-item role="listitem"><b>End Date: </b>{{endDate}}</mat-list-item>
+        <mat-list-item role="listitem"><b>Score: </b>{{score}}</mat-list-item>
+
+    </mat-list>
+    
+</mat-dialog-content>

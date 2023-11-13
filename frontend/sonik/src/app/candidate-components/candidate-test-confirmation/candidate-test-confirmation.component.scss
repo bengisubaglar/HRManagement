@@ -1,0 +1,26 @@
+
+// for header 
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .spacer2{
+  margin-right: 5px;
+  } 
+  
+  // for header
+
+
+  .tb{
+    background-color: #d5e9ff ;
+    color: #17569b;
+  }
+
+  .container{
+    margin-top: 30px;
+    max-width: 440px;
+  }
+  .mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #17569b;
+    --mdc-protected-button-label-text-color: #fff;
+}

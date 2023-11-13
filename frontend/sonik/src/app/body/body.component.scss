@@ -1,0 +1,26 @@
+.body{
+    width: auto;
+    height: auto;
+    margin-left: 5rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .5s ease;
+    background: #f4f4f4;  
+}
+
+.body-trimmed{
+
+    width: calc(100½ - 1616.5625rem);
+    margin-left: 16.5625rem;
+
+
+}
+
+
+
+.body-md-screen{
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+
+}

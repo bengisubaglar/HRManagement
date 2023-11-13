@@ -1,0 +1,46 @@
+<!--HEADER START-->
+<mat-toolbar style="background-color: #17569b;">
+
+    <span style="color:#fff">SONİK</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="redirectProfile()">
+        <mat-icon style="color:#fff;">account_circle</mat-icon>
+    </button>
+    <span class="spacer2"></span>
+    <button mat-raised-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+    </button>
+</mat-toolbar>
+<!--HEADER END-->
+<body>
+<div class="container">
+    <mat-card>
+        <mat-toolbar class="tb">Meeting Confirmation</mat-toolbar>
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{name}} {{lastName}}</mat-card-title>
+                <mat-card-subtitle>{{email}}</mat-card-subtitle>
+                <img mat-card-sm-image src="../../../assets/img/avatar.png">
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content style="margin-top:20px; margin-bottom:20px;">
+            <p>Hello {{name}} {{lastName}}!
+            </p>
+            <p>
+                <b>You are about to join a meeting which is going to be hosted by your Human
+                    Resources responsible {{hrName}} {{hrLastName}}.</b> The domain of the host is going to be
+                {{hrEmail}}
+                This online meeting is going to be a technical interview about your knowledge and the job position's
+                requirements. Please proceed below if you would like to
+                join the meeting hosted by {{hrName}} {{hrLastName}}.
+            </p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="redirectMeeting()">Join Meeting</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</body>

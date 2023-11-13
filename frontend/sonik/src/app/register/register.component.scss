@@ -1,0 +1,20 @@
+.mat-toolbar{
+    margin: -24px;
+    margin-bottom: 10px;
+    width: auto;
+    color: #efefef;
+}
+
+.mat-form-field{
+    
+    width: max-content;
+    height: auto;
+}
+.spacer{
+    margin-left: 400px;
+}
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #17569b;
+    --mdc-protected-button-label-text-color: #fff;
+}

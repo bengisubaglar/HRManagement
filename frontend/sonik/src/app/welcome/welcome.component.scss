@@ -1,0 +1,28 @@
+.main-div {
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 110px;
+    margin-left: 25px;
+    background-color: #17569b;
+    color: #efefef;
+  }
+
+
+
+
+  .btn2 {
+    margin-left: 10px;
+  }
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}

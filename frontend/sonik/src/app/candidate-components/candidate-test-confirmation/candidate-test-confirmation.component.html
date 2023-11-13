@@ -1,0 +1,41 @@
+<!--HEADER START-->
+<mat-toolbar style="background-color: #17569b;">
+
+    <span style="color:#fff">SONİK</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="redirectProfile()">
+        <mat-icon style="color:#fff;">account_circle</mat-icon>
+    </button>
+    <span class="spacer2"></span>
+    <button mat-raised-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+    </button>
+</mat-toolbar>
+<!--HEADER END-->
+<body>
+<div class="container">
+    <mat-card>
+        <mat-toolbar class="tb">Test Confirmation</mat-toolbar>
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{name}} {{lastName}}</mat-card-title>
+                <mat-card-subtitle>{{email}}</mat-card-subtitle>
+                <img mat-card-sm-image src="../../../assets/img/avatar.png">
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content style="margin-top:20px; margin-bottom:20px;">
+            Hello {{name}} {{lastName}}! You are about to take the sonIK recruitment test.
+            This test is going to determine your knowledge about the job position. After you click the take test button, the site will redirect you to the test panel.
+            Please press the 'Start Test' button in the next page.
+            Please proceed below if you would like to
+            take the test that has been assigned to you.
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="redirectMeeting()">Take Test</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</body>

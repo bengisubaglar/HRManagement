@@ -1,0 +1,56 @@
+//for header
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+table {
+  width: 100%;
+}
+
+.table1 {
+  border-style: solid;
+  border-radius: 1px;
+  border-color: #d5e9ff;
+}
+
+.tb {
+  background-color: #d5e9ff;
+  color: #17569b;
+  margin-top: 3%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #efefef;
+  color: #efefef;
+  background-color: #efefef;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+  color: #efefef;
+  background-color: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+
+.example-element-description {
+  padding: 16px;
+}

@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography">
+    <mat-toolbar >
+        <mat-toolbar-row fxLayout="row">
+            <span>Add New Candidate</span>
+            <span class="spacer"></span>
+            <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <form [formGroup]="addCandidateForm">
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 100%; margin-top: 5%;">
+                <mat-label>Candidate Email</mat-label>
+                <input matInput formControlName="to" required>
+                <mat-error *ngIf="addCandidateForm.controls.to.touched && addCandidateForm.controls.to.invalid">
+                    <span *ngIf="addCandidateForm.controls.to.errors.required">This field is mandatory</span>
+                    <span *ngIf="addCandidateForm.controls.to.errors.pattern">Please enter a valid email</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()"
+        [disabled]="!(addCandidateForm.valid && addCandidateForm.dirty)">
+        <mat-icon>inbox</mat-icon>Send Invite Mail
+    </button>
+</mat-dialog-actions>
+

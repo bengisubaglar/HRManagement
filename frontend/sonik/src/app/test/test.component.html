@@ -1,0 +1,84 @@
+<!--HEADER START-->
+<mat-toolbar style="background-color: #17569b;">
+
+    <span style="color:#fff">SONİK</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="redirectProfile()">
+      <mat-icon style="color:#fff;">account_circle</mat-icon>
+    </button>
+    <span class="spacer2"></span>
+    <button mat-raised-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-toolbar>
+  <!--HEADER END-->
+  
+
+
+<div class="start_btn">
+    <button (click) ="showWarningPopUp()">Start Test</button>
+</div>
+
+<div class="info_box" [ngClass]="showWarning ? 'activeInfo' : ''">
+    <div class="info-title"><span>The rules of the Test</span></div>
+    <div class="info-list">
+        <div class="info">1. You will only have <span>60 seconds</span> for each question.</div>
+        <div class="info">2. Once an answer is selected, it can't be undone.</div>
+        <div class="info">3. You can't select any options once the time goes off.</div>        
+        <div class="info">4. You can't leave the test once it has started.</div>
+        <div class="info">5. You can't open other tabs during the test.</div>
+       
+    </div>
+    <div class="buttons">
+        <a href="candidate/homepage"><button class="quit "mat-raised-button color="warn">Exit Test</button></a>
+        <button class="restart "mat-raised-button color="primary" (click) = "startQuiz()">Start Test</button>
+    </div>
+</div>
+
+<div class="quiz_box" [ngClass]="isQuizStarted? 'activeQuiz' : ''">
+    
+    <header>
+        <div class="title">Sonik Recruitment Test</div>
+        <div class="timer">
+            <div class="time_left_txt">Time Off</div>
+            <div class="timer_sec">{{remainingTime}}</div>
+        </div>
+        <div class="time_line" style="width: 55opx;"></div>
+    </header>
+    <section *ngIf="isQuizStarted">
+        <div class="que_text"><span>{{currentQuestionNo +1}}. {{questionsList[currentQuestionNo].description}} </span></div>
+        <div class="option_list">
+            <div class="option" [ngClass]="{
+                'disabled': isOptionSelected(questionsList[currentQuestionNo].answers),
+                'correct':option.isSelected  != undefined && option.correct,
+        'incorrect': option.isSelected != undefined && !option.correct}" (click)="selectOption(option)" *ngFor="let option of questionsList[currentQuestionNo].answers"><span>
+                {{option.options}}
+            </span>
+                
+            </div>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="total_que"><span>
+            <p>{{currentQuestionNo+1}}</p> of <p>{{questionsList.length}}</p> Questions
+        </span></div>
+        <button  *ngIf = "currentQuestionNo+1 == questionsList.length" class="next_btn show" mat-raised-button color="primary" (click) = "finish();checkSuccess()">Finish</button>
+        <button  *ngIf = "currentQuestionNo+1 != questionsList.length" class="next_btn show" mat-raised-button color="primary" (click)="nextQuestion()">Next</button>
+    </footer>
+</div>
+
+<div class="result_box" [ngClass]="isQuizEnded? 'activeResult': '' ">
+    
+    <div class="complete_text">You have completed the Sonik Recruitment Test!</div>
+    <div *ngIf = "success" class="score_text">
+        <span>Congrats! You got {{correctAnswerCount}} correct answers out of {{questionsList.length}} questions. You passed the test.</span>
+    </div>
+    <div *ngIf = "!success" class="score_text">
+        <span>You got {{correctAnswerCount}} correct answers out of {{questionsList.length}} questions. You failed the test.</span>
+    </div>
+    <div class="buttons">
+        <button class="submit" mat-raised-button color="primary" type="submit" (click)="save()">Submit My Answers</button>
+    </div>
+</div>

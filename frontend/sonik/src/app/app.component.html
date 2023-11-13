@@ -1,0 +1,8 @@
+
+<app-hr-sidenav *ngIf="showSideBar && sideNavType=='HUMAN_RESOURCES'" (onToggleSideNav)="onToggleSideNav($event)"></app-hr-sidenav>
+<app-candidate-sidenav *ngIf="showSideBar && sideNavType=='CANDIDATE'" (onToggleSideNav)="onToggleSideNav($event)"></app-candidate-sidenav>
+<app-body *ngIf="showBody" 
+    [collapsed] = "isSideNavCollapsed"
+    [screenWidth] = "screenWidth"
+></app-body>
+

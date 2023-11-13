@@ -1,0 +1,16 @@
+.mat-toolbar{
+    margin: -24px;
+    margin-bottom: 10px;
+    width: 500px;
+    background-color: #d5e9ff;
+    color: #17569b;
+}
+
+
+.spacer{
+    margin-left: 42%;
+}
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #17569b;
+    --mdc-protected-button-label-text-color: #fff;
+}

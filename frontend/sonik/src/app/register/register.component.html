@@ -1,0 +1,85 @@
+<mat-dialog-content class="mat-typography">
+    <mat-toolbar style="background-color: #17569b;">
+        <mat-toolbar-row fxLayout="row">
+            <span>Register</span>
+            <span class="spacer"></span>
+            <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <form [formGroup]="registerForm">
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid">
+                    <span *ngIf="registerForm.controls.email.errors.required">This field is mandatory</span>
+                    <span *ngIf="registerForm.controls.email.errors.pattern">Please enter a valid email</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" required [type]="hide ? 'password' : 'text'">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}} </mat-icon>
+
+                </button>
+                <mat-error *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid">
+                    <span *ngIf="registerForm.controls.password.errors.required">This field is mandatory</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" required>
+                <mat-error *ngIf="registerForm.controls.firstName.touched && registerForm.controls.firstName.invalid">
+                    <span *ngIf="registerForm.controls.firstName.errors.required">This field is mandatory</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" required>
+                <mat-error *ngIf="registerForm.controls.lastName.touched && registerForm.controls.lastName.invalid">
+                    <span *ngIf="registerForm.controls.lastName.errors.required">This field is mandatory</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>TCKN</mat-label>
+                <input matInput formControlName="tckn" required>
+                <mat-error *ngIf="registerForm.controls.tckn.touched && registerForm.controls.tckn.invalid">
+                    <span *ngIf="registerForm.controls.tckn.errors.required">This field is mandatory</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" fxFlex style="width: 478px;">
+                <mat-label>Birthdate</mat-label>
+
+                <input matInput [matDatepicker]="picker" formControlName="birthdate"required>
+
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="registerForm.controls.birthdate.touched && registerForm.controls.birthdate.invalid">
+                    <span *ngIf="registerForm.controls.birthdate.errors.required">This field is mandatory</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()"
+        [disabled]="!(registerForm.valid && registerForm.dirty)">
+        <mat-icon>login</mat-icon>Register
+    </button>
+</mat-dialog-actions>
