@@ -14,10 +14,10 @@ export class ZoomComponent {
     console.log(this.candidateService.CANDIDATE_DATA[0]);
     console.log(this.candidateService.CANDIDATE_DATA[1]);
     let payload = {
-      meetingNumber: '8757225757',
-      passWord: 'sonik2023',
-      sdkKey: 'u4Kgl80wR_WXP_1siy5oeQ',
-      sdkSecret: '9MkzejeQevBXO8Zou424V1ry87jhYrBS',
+      meetingNumber: '***',
+      passWord: '***',
+      sdkKey: '**',
+      sdkSecret: '**',
       userName: this.candidateService.CANDIDATE_DATA[0] + ' ' + this.candidateService.CANDIDATE_DATA[1],
       userEmail: this.userService.showProfile(),
       role: '0',
@@ -67,5 +67,5 @@ export class ZoomComponent {
 
   }
 
-  
+
 }
